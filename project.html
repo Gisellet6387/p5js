@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+      var centerX, centerY;
+var scale;
+var angle;
+
+function setup() {
+  createCanvas(400, 400);
+  centerX = 200;
+  centerY = 200;
+  scale = 1;
+  angle = 0;
+  small = 0;
+}
+  function draw() {
+     fill('white')
+  textSize(100)
+  text('enjoy',90,150)
+     fill(random(250), random(250), random(250))
+  ellipse(centerX, centerY, 600 * scale, 600 * scale)
+
+  scale--
+ scale=abs(cos(angle));
+ angle+=PI/100;
+
+}
+function keyPressed(){
+  background(random(255),random(255),random(255))
+noLoop() 
+  
+
+}
+function mouseDragged() {
+  
+	line(mouseX,mouseY,mouseX,mouseY)
+	line(mouseX,mouseY,400,0)
+	
+}
+function mouseWheel(){
+    fill(random(255),random(255),random(255))
+  fill('yellow')
+  ellipse (mouseX,mouseY,30,30)
+  fill('red')
+  ellipse (mouseX+40,mouseY,53,40)
+  ellipse (mouseX-40,mouseY,53,40)
+  ellipse (mouseX,mouseY+40,40,53)
+  ellipse (mouseX,mouseY-40,40,53)
+}
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/USERNAME/p5js/blob/master/FILENAME.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
