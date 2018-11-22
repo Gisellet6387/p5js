@@ -1,0 +1,60 @@
+var s;
+function setup() {
+  createCanvas(450, 450);
+  background(220);
+  
+  s = 30
+}
+function draw() {
+  strokeWeight(0)
+  fill("red")
+  rect(50,50,50,50)
+  fill("green")
+  rect(50,350,50,50)
+  fill("yellow")
+  rect(350,50,50,50)
+  fill("black")
+  rect(350,350,50,50)
+  // options 
+}
+  
+function keyPressed() {
+    if (key === 'b'){
+      background(220); 
+      //clear
+    }
+    if (key === 'c') {
+      stroke(random(5,200),random(5,200),random(5,200)) 
+     //random colors
+    }
+    
+    
+  }
+function mouseClicked (){
+  rect(50,50,50,50)
+  rect(50,350,50,50)
+  rect(350,50,50,50)
+  rect(350,350,50,50)
+  
+  if (mouseX > 50 && mouseX < 100 && mouseY > 50 && mouseY < 100){
+    stroke("red") 
+  }
+  
+  
+  if (mouseX > 50 && mouseX < 100 && mouseY > 350 && mouseY < 400){
+    stroke("green") 
+    }
+  if (mouseX > 350 && mouseX < 400 && mouseY > 50 && mouseY < 100){
+    stroke("yellow")
+  }
+ if (mouseX > 350 && mouseX < 400 && mouseY > 350 && mouseY < 100){
+    stroke("black")
+  }
+    
+}
+  
+function mouseDragged() {
+   strokeWeight(s)
+  line(mouseX ,mouseY ,mouseX,mouseY) 
+  //draw
+  }
